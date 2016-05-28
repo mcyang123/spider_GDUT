@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3c.org/1999/xhtml">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><head><link type="text/css" rel="stylesheet" href="/selfservice/javax.faces.resource/theme.css.jsf?ln=primefaces-imc-classic-blue" /><link rel="stylesheet" media="screen" type="text/css" href="/selfservice/javax.faces.resource/style.css.jsf?ln=css" /><link rel="stylesheet" media="screen" type="text/css" href="/selfservice/javax.faces.resource/imctip/dfw.css.jsf?ln=css" /><link rel="stylesheet" media="screen" type="text/css" href="/selfservice/javax.faces.resource/imcComponent.css.jsf?ln=css" /><script type="text/javascript" src="/selfservice/javax.faces.resource/cookie_operate.js.jsf?ln=jscript"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/imcCommonCompressed.js.jsf?ln=jscript"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/jquery/jqueryCompressed.js.jsf?ln=jscript"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/highchart/highcharts.js.jsf?ln=jscript"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource//imctip/imctip.js.jsf?ln=jscript"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/chartTheme.js.jsf?ln=primefaces-imc-new-webui"><!--
+
+//--></script><link rel="stylesheet" media="screen" type="text/css" href="/selfservice/javax.faces.resource/primefaces.css.jsf?ln=primefaces&amp;v=3.5.25" /><script type="text/javascript" src="/selfservice/javax.faces.resource/jquery/jquery.js.jsf?ln=primefaces&amp;v=3.5.25"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/primefaces.js.jsf?ln=primefaces&amp;v=3.5.25"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/jquery/jquery-plugins.js.jsf?ln=primefaces&amp;v=3.5.25"><!--
+
+//--></script>
+		<title>用户自助服务</title><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3c.org/1999/xhtml">
+
+<script type="text/javascript"><!--
+
+	POPUP_WINDOW_SESSION_ID = "C306DCA85C1B564D56EDE4A53329EF21";
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/imcComponent.js.jsf?ln=jscript"><!--
+
+//--></script><script type="text/javascript" src="/selfservice/javax.faces.resource/imctip/src/jQuery.dfwcard.js.jsf?ln=jscript"><!--
+
+//--></script>
+
+
+</html>
+		<LINK rel="stylesheet" type="text/css" href="css/styles.css" />
+	<script language="javascript"><!--
+
+	function checkValue()
+	{
+		// 
+	    if (document.mainForm["mainForm:username"].value == null || document.mainForm["mainForm:username"].value == "")
+	    {
+			alert("请输入帐号名。");
+	        document.mainForm["mainForm:username"].focus();
+	        return false;
+	    }
+	
+	    //
+	    if (document.mainForm["mainForm:password"].value == null || document.mainForm["mainForm:password"].value == "")
+	    {
+	    	alert("请输入密码。");
+	        document.mainForm["mainForm:password"].focus();
+	        return false;
+	    }
+	    //
+	    if (document.getElementById("mainForm:ifCheckCode").value == null || "true" == document.getElementById("mainForm:ifCheckCode").value) {
+	        if (document.mainForm["mainForm:code"].value == null || document.mainForm["mainForm:code"].value == "")
+	        {
+	    	    alert("请输入验证码。");
+	            document.mainForm["mainForm:code"].focus();
+	            return false;
+	        }
+	     }
+		return true;
+	}
+	function changeFaqHidden()
+	{
+		if(document.mainForm["mainForm:faqHidden"].value!="submit"){
+			document.mainForm["mainForm:faqHidden"].value="submit";
+		}
+		return true;
+	}
+	document.onkeypress = ass_captureEnterEvent;
+	ass_bodyKeyCapture = true;
+	
+	function disableEnter(e, buttonName){
+  		var e = e ||event;
+  		ass_setEnterControl(e,buttonName);
+  		if(e.keyCode == 13){
+    		e.preventDefault ? e.preventDefault():(e.returnValue = false);
+  		}
+	}
+
+	function detectBrowser() {
+	    var browser=navigator.appName;
+	    var b_version=navigator.appVersion.toLowerCase();
+	    var version=parseFloat(b_version);
+	    var curVersion;
+	    var browerMsg = '要获得最佳系统界面效果，推荐使用的浏览器及版本为：IE10/IE11、Firefox 30 及以上版本、Chrome 35 及以上版本。';
+	    var ua = navigator.userAgent.toLowerCase();
+	    if ((browser == "Netscape" && version >= 5) || (browser == "Microsoft Internet Explorer" && version >= 4)) {
+	      if (browser=="Microsoft Internet Explorer") {
+	    	curVersion=ua.substr(ua.indexOf('msie') + 5,3);
+	        if (curVersion < 8.0) {
+	          alert(browerMsg);
+	        }
+	      } else {
+	        if (ua.indexOf('netscape') >= 0) {
+	          curVersion=ua.substr(ua.indexOf('netscape') + 9, 3);
+	          if (curVersion < 7.0){
+	          alert(browerMsg);
+	          }
+	        } else {
+	          if (ua.indexOf('firefox') >= 0) {
+	            curVersion=ua.substr(ua.indexOf('firefox')+8,3);
+	            if (curVersion < 3.6) {
+	              alert(browerMsg);
+	            }
+	          } else if (ua.indexOf('chrome') >= 0) {
+	              curVersion=ua.substr(ua.indexOf('chrome')+7,3);
+	              if (curVersion < 8.0) {
+	                alert(browerMsg);
+	              }
+	          } else {
+	            alert(browerMsg);
+	          }
+	        }
+	      }
+	    } else {
+	      alert(browerMsg);
+	    }
+		var detemineIsShow = document.getElementById("detemineIsShow").value;
+		if(detemineIsShow=="")
+		{
+			document.getElementById("ifShowImage").style.display="none";
+		}
+	}
+	
+//--></script></head><body onkeypress="disableEnter(event, 'mainForm:loginCmd')" onload="detectBrowser();" class="ssv_ui_log_body"><form id="mainForm" name="mainForm" method="post" action="/selfservice/login.jsf" enctype="application/x-www-form-urlencoded">  
+        <DIV class="loginRegisterContent center1180" style="position: relative">
+	        <DIV class="banner" style="z-index:0;" id="ifShowImage">
+				<input type="hidden" id="detemineIsShow" value="login_zh.gif" /><img src="images/login/login_zh.gif" />
+	        </DIV>
+	        
+		    <DIV class="loginRegister" style="z-index:3;">
+				<UL class="loginRegisterNav">
+				    <table style="width:100%">
+				      <tr>
+				        <td style="width:20%"> 
+				            <A href="http://www.gdut.edu.cn">
+						    </A>
+						</td>
+						<td style="width:80%">
+						    <label style="display: block;font-size:15px;font-weight:bolder;vertical-align: middle;padding-top: 30px;padding-left:10px;padding-right:10px;width: 260px;height:30px;overflow: auto;word-wrap: break-word;">欢迎登录用户自助服务平台</label>
+						</td>
+				      </tr>
+				    </table>
+				</UL>
+				<DIV id="loginBox" class="loginBox"><table cellpadding="2"><tbody>
+<tr><td><table border="0" cellpadding="2" cellspacing="5" width="350px" class="divClearMargin15"><tbody>
+<tr><td class="cmn_wdper_20"><span style="white-space:nowrap;">帐号名</span></td><td class=""><input id="mainForm:username" name="mainForm:username" type="text" value="00006372" title="请输入帐号名" style="width:85%" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" /><script id="mainForm:username_s" type="text/javascript"><!--
+PrimeFaces.cw('InputText','widget_mainForm_username',{id:'mainForm:username'});
+//--></script><div id="mainForm:j_id_14" class="ui-tooltip ui-widget ui-widget-content ui-shadow ui-corner-all"></div><script id="mainForm:j_id_14_s" type="text/javascript"><!--
+$(function(){PrimeFaces.cw('Tooltip','widget_mainForm_j_id_14',{id:'mainForm:j_id_14',showEvent:'focus',hideEvent:'blur',showEffect:'fade',hideEffect:'fade',target:'mainForm:username'});});
+//--></script><div id="mainForm:j_id_15" aria-live="polite"></div></td></tr>
+<tr><td class="cmn_wdper_20"><span style="white-space:nowrap;">密码</span></td><td class=""><input id="mainForm:password" name="mainForm:password" type="password" class="ui-inputfield ui-password ui-widget ui-state-default ui-corner-all" style="width:85%" value="00006372" /><script id="mainForm:password_s" type="text/javascript"><!--
+$(function(){PrimeFaces.cw('Password','widget_mainForm_password',{id:'mainForm:password'});});
+//--></script></td></tr>
+<tr><td class="cmn_wdper_20"></td><td class=""><table cellspacing="0" width="230px"><tbody>
+<tr><td><div id="mainForm:j_id_1b" aria-live="polite"></div></td></tr>
+</tbody>
+</table></td></tr>
+<tr><td class="cmn_wdper_20"><span style="white-space:nowrap;">验证码</span></td><td class=""><input id="mainForm:code" name="mainForm:code" type="text" value="1111" maxlength="4" style="width:85%" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" /><script id="mainForm:code_s" type="text/javascript"><!--
+PrimeFaces.cw('InputText','widget_mainForm_code',{id:'mainForm:code'});
+//--></script><div id="mainForm:j_id_1f" aria-live="polite"></div></td></tr>
+<tr><td class="cmn_wdper_20"></td><td class=""><table border="0" width="170px" style="height:35px"><tbody>
+<tr><td><div id="mainForm:oup1" class="ui-outputpanel ui-widget"><img src='/selfservice/codeImages/checkCode1522579724037306202.jpg' align='absmiddle'/></div></td><td><a id="mainForm:j_id_1k" href="#" class="ui-commandlink ui-widget fontC36cS12" onclick="PrimeFaces.ab({source:'mainForm:j_id_1k',update:'mainForm:j_id_1k mainForm:message mainForm:oup1'});return false;">看不清，换一张</a></td></tr>
+</tbody>
+</table></td></tr>
+<tr><td class="cmn_wdper_20"><span style="margin-left:3px">用户类型</span></td><td class=""><table cellpadding="2" cellspacing="0"><tbody>
+<tr><td><div id="mainForm:usertype" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all ui-helper-clearfix ctrl_selectShort ui-state-error"><div class="ui-helper-hidden-accessible"><select id="mainForm:usertype_input" name="mainForm:usertype_input"><option value="1" selected="selected">普通用户</option><option value="2">设备管理用户</option></select></div><div class="ui-helper-hidden-accessible"><input id="mainForm:usertype_focus" name="mainForm:usertype_focus" type="text" readonly="readonly" /></div><label id="mainForm:usertype_label" class="ui-selectonemenu-label ui-inputfield ui-corner-all">&nbsp;</label><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right ui-state-error"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="mainForm:usertype_panel" class="ui-selectonemenu-panel ui-widget-content ui-corner-all ui-helper-hidden ui-shadow"><div class="ui-selectonemenu-items-wrapper" style="height:auto"><ul class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="普通用户">普通用户</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="设备管理用户">设备管理用户</li></ul></div></div></div><script id="mainForm:usertype_s" type="text/javascript"><!--
+$(function(){PrimeFaces.cw('SelectOneMenu','widget_mainForm_usertype',{id:'mainForm:usertype'});});
+//--></script></td><td><span style="margin-left:3px"> </span></td><td><button id="mainForm:loginCmd" name="mainForm:loginCmd" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="return checkValue();;" style="width:100px;font-size:18px; margin-top: -5px;" type="submit"><span class="ui-button-text ui-c">登录</span></button><script id="mainForm:loginCmd_s" type="text/javascript"><!--
+PrimeFaces.cw('CommandButton','widget_mainForm_loginCmd',{id:'mainForm:loginCmd'});
+//--></script></td></tr>
+</tbody>
+</table></td></tr>
+<tr><td class="cmn_wdper_20"> </td><td class=""><div id="mainForm:message" aria-live="polite" class="ui-message-error ui-widget ui-corner-all"><span class="ui-message-error-icon"></span><span class="ui-message-error-detail">验证码错误。</span></div></td></tr>
+</tbody>
+</table></td></tr>
+</tbody>
+</table>
+					
+					<DIV class="divClear"><a href="/mselfservice/login.jsf" class="fontC36cS12">触屏版自助</a> | <a href="/selfservice/mail/forgetPassword.jsf?init=true" class="fontC36cS12">忘记密码</a> | <a href="/selfservice/preregister/unLoginFaqList.jsf?init=true" class="fontC36cS12">FAQ</a>
+					</DIV>
+					
+					<DIV class="divClear">
+						<DL class="partners">
+						</DL>
+				    </DIV>
+				</DIV>
+				
+				
+				<DIV class="divClear_bg">
+			        <DIV class="backgroundImage"><span style="display: block;font-weight:bold;padding-right:25px;word-wrap:break-word;" class="partnersTip">功能特性：</span>
+				    </DIV>
+		            <DIV style="display: block;line-height: 2em; margin-left: 30px; padding-left: 25px; font-size:11px;padding-right:25px;word-wrap:break-word;">普通用户查询及修改个人信息<br>普通用户修改用户密码<br>普通用户查询上网明细<br>设备管理用户查询及修改个人信息<br>设备管理用户修改用户密码<br>用户预注册
+				    </DIV>
+			    </DIV>
+				
+				<DIV class="boxBottom"></DIV>
+		    </DIV>
+		    
+		  </DIV>
+		  
+		
+		  
+			<DIV id="simpleFooter">
+				<P><span class="copyright">版权所有 ©广东工业大学，保留一切权利。</span>
+				</P>
+				<P><span class="copyright">推荐使用的浏览器及版本为：</span>IE10/IE11、<a id="mainForm:downloadFirefox" href="#" class="ui-commandlink ui-widget imc_ui_log_tips_txt" onclick="PrimeFaces.addSubmitParam('mainForm',{'mainForm:downloadFirefox':'mainForm:downloadFirefox'}).submit('mainForm');return false;">Firefox 30 及以上版本</a>、Chrome 35 及以上版本。推荐分辨率显示宽度为1280。
+				</P>
+			</DIV><input type="hidden" id="mainForm:ifCheckCode" name="mainForm:ifCheckCode" value="true" /><input type="hidden" id="mainForm:descContent" name="mainForm:descContent" value="普通用户查询及修改个人信息&lt;br&gt;普通用户修改用户密码&lt;br&gt;普通用户查询上网明细&lt;br&gt;设备管理用户查询及修改个人信息&lt;br&gt;设备管理用户修改用户密码&lt;br&gt;用户预注册" /><input type="hidden" name="mainForm_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="yq8/jx9j7DAw6UhBIZ2uKne07ePWC8afsF2Lui/bchCxZqFV" /></form></body>
+<script language="javascript"><!--
+
+
+	document.mainForm["mainForm:username"].focus();
+
+
+//--></script>
+</html>
